@@ -28,7 +28,7 @@ public class ProfitabilityCalculation extends AuditableAbstractAggregateRoot<Pro
             "Este indicador refleja el rendimiento para una compra al contado sin financiamiento; " +
             "si el comprador utiliza crédito hipotecario, el retorno real de su capital variará de acuerdo a las cuotas de su préstamo.";
 
-    public static final BigDecimal DEFAULT_EXCHANGE_RATE = new BigDecimal("3.7500");
+    public static final BigDecimal DEFAULT_EXCHANGE_RATE = new BigDecimal("3.4400");
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -106,7 +106,7 @@ public class ProfitabilityCalculation extends AuditableAbstractAggregateRoot<Pro
         this.observacionesSupuestos = command.observaciones();
         this.avisoNormativo = AVISO_NORMATIVO_LEGAL;
 
-        // Tipo de cambio unificado (si no se especifica, usa el estándar 3.7500)
+        // Tipo de cambio unificado (si no se especifica, usa el estándar 3.4400)
         BigDecimal tc = (command.tipoCambioUsado() != null && command.tipoCambioUsado().compareTo(BigDecimal.ZERO) > 0)
                 ? command.tipoCambioUsado()
                 : DEFAULT_EXCHANGE_RATE;

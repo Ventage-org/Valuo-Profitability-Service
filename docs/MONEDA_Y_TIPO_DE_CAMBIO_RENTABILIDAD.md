@@ -32,7 +32,7 @@ El agregado raíz `ProfitabilityCalculation` implementa una estrategia de resolu
 ```
 [ Predicción Venta / Alquiler ] ──> (Soles Nominales PEN)
                                           │
-                                          ▼  (TC unificado: default 3.7500 o ingresado por usuario)
+                                          ▼  (TC unificado: default 3.4400 o ingresado por usuario)
                                     [ Conversión ]
                                     Venta USD    = Venta PEN / TC
                                     Alquiler USD = Alquiler PEN / TC
@@ -52,7 +52,7 @@ El agregado raíz `ProfitabilityCalculation` implementa una estrategia de resolu
 ```
 
 #### Valor por Defecto:
-* `DEFAULT_EXCHANGE_RATE = 3.7500`
+* `DEFAULT_EXCHANGE_RATE = 3.4400`
 
 ---
 
@@ -64,7 +64,7 @@ La interfaz de usuario en Angular dispone de dos controles interactivos en tiemp
    * Rango: `0.0000` (0%) a `0.3500` (35%).
    * Modifica los gastos operativos anuales (`OpEx`), alterando directamente el `NOI` y el `Cap Rate`.
 2. **Slider / Input de Tipo de Cambio (TC):**
-   * Rango sugerido: `3.5000` a `4.0000` (default `3.7500`).
+   * Rango sugerido: `3.2000` a `3.8000` (default `3.4400`).
    * Al mover el TC, el servicio re-escala instantáneamente los flujos nominales en dólares:
      $$\text{Venta USD} = \frac{\text{Venta PEN}}{TC_{\text{nuevo}}}$$
      $$\text{Alquiler USD} = \frac{\text{Alquiler PEN}}{TC_{\text{nuevo}}}$$
@@ -216,7 +216,7 @@ El canon mensual de alquiler se recibe exclusivamente en Soles (`alquilerMensual
   "valorVentaPen": 1068750.00,
   "alquilerMensualPen": 5437.50,
   "oerRatio": 0.1500,
-  "tipoCambioUsado": 3.7500,
+  "tipoCambioUsado": 3.4400,
   "distritoNombre": "Miraflores",
   "observaciones": "Simulación con predicciones nativas en Soles"
 }
